@@ -4,16 +4,7 @@ import {TextInput} from 'react-native-gesture-handler';
 import colors from '../../../assets/themes/colors';
 import styles from './styles';
 
-const Input = ({
-  onchangeText,
-  style,
-  value,
-  label,
-  icon,
-  iconPosition,
-  error,
-  ...props
-}) => {
+const CustomButton = ({style, value, label, icon, iconPosition, error, ...props}) => {
   const [focused, setFocused] = React.useState(false);
   const getFlexDirection = () => {
     if (icon && iconPosition) {
@@ -67,4 +58,4 @@ const Input = ({
   );
 };
 
-export default Input;
+export default CustomButton;

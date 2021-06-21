@@ -23,6 +23,7 @@ const Login = () => {
         icon={<Text>HIDE</Text>}
         iconPosition="right"
       />
+      <CustomeButton title="Submit" loading={true}/>
     </Container>
   );
 };
