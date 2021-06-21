@@ -3,6 +3,7 @@ import React from 'react';
 import {Text} from 'react-native';
 import Container from '../../components/common/Container';
 import Input from '../../components/common/Input';
+import CustomButton from '../../components/common/CustomButton';
 
 const Login = () => {
   const [text, onChangeText] = React.useState('');
@@ -23,7 +24,7 @@ const Login = () => {
         icon={<Text>HIDE</Text>}
         iconPosition="right"
       />
-      <CustomeButton title="Submit" loading={true}/>
+      <CustomButton title="Submit" loading={true} />
     </Container>
   );
 };
