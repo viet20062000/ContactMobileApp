@@ -1,0 +1,9 @@
+# Windows files
+[*.bat]
+end_of_line = auto
+// Set the default
+"editor.formatOnSave": false,
+// Enable per-language
+"[javascript]": {
+    "editor.formatOnSave": true
+}
