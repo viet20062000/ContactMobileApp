@@ -31,6 +31,7 @@ const CustomButton = ({
   };
   return (
     <TouchableOpacity style={[styles.wrapper, {backgroundColor: getBgColor()}]}>
+      <View></View>
       {title && (
         // eslint-disable-next-line react-native/no-inline-styles
         <Text style={{color: disabled ? 'black' : colors.white}}>{title}</Text>
