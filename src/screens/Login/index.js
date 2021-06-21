@@ -24,7 +24,10 @@ const Login = () => {
         icon={<Text>HIDE</Text>}
         iconPosition="right"
       />
-      <CustomButton title="Submit" loading={true} />
+      <CustomButton title="Submit" loading={true} disabled={true} />
+      <CustomButton title="Click me" primary />
+      <CustomButton title="Test" secondary />
+      <CustomButton title="Register" danger />
     </Container>
   );
 };
