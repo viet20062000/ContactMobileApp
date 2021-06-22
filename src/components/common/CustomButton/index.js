@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {Text, View, ActivityIndicator} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import colors from '../../../assets/themes/colors';
 import styles from './styles';
@@ -11,7 +11,7 @@ const CustomButton = ({
   primary,
   secondary,
   danger,
-  ...props
+  onPress,
 }) => {
   const getBgColor = () => {
     if (disabled) {
@@ -30,12 +30,25 @@ const CustomButton = ({
     }
   };
   return (
-    <TouchableOpacity style={[styles.wrapper, {backgroundColor: getBgColor()}]}>
-      <View></View>
-      {title && (
-        // eslint-disable-next-line react-native/no-inline-styles
-        <Text style={{color: disabled ? 'black' : colors.white}}>{title}</Text>
-      )}
+    <TouchableOpacity
+      disabled={disabled}
+      onPress={onPress}
+      style={[styles.wrapper, {backgroundColor: getBgColor()}]}>
+      <View style={[styles.loaderSection]}>
+        {loading && (
+          <ActivityIndicator
+            color={primary ? colors.secondary : colors.primary}
+          />
+        )}
+        {title && (
+          // eslint-disable-next-line react-native/no-inline-styles
+          <Text
+            // eslint-disable-next-line react-native/no-inline-styles
+            style={{color: disabled ? 'black' : colors.white, paddingLeft: 10}}>
+            {title}
+          </Text>
+        )}
+      </View>
     </TouchableOpacity>
   );
 };

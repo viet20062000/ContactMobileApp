@@ -21,4 +21,7 @@ export default StyleSheet.create({
     color: colors.danger,
     paddingTop: 5,
   },
+  loaderSection: {
+    flexDirection: 'row',
+  },
 });
