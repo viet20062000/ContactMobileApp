@@ -1,14 +1,14 @@
 import React from 'react';
 import {Text, Image, View} from 'react-native';
-import Container from './../common/Container/index';
-import Input from './../common/Input/index';
-import CustomButton from './../common/CustomButton/index';
+import Container from '../common/Container/index';
+import Input from '../common/Input/index';
+import CustomButton from '../common/CustomButton/index';
 import styles from './styles';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
-import {REGISTER} from '../../constants/routeName';
+import {LOGIN} from '../../constants/routeName';
 
-const LoginComponent = () => {
+const RegisterComponent = () => {
   const {navigate} = useNavigation();
   return (
     <Container>
@@ -20,9 +20,12 @@ const LoginComponent = () => {
       />
       <View>
         <Text style={styles.Title}>Welcome to RNContacts</Text>
-        <Text style={styles.subTitle}>Please login</Text>
+        <Text style={styles.subTitle}>Create a free account</Text>
         <View style={styles.form}>
           <Input placeholder="Enter Username" label="Username" />
+          <Input placeholder="Enter First Name" label="First Name" />
+          <Input placeholder="Enter Last Name" label="Last Name" />
+          <Input placeholder="Enter E-mail" label="E-mail" />
           <Input
             placeholder="Enter Password"
             label="Password"
@@ -33,12 +36,12 @@ const LoginComponent = () => {
           <CustomButton title="Submit" primary />
 
           <View style={styles.registerSection}>
-            <Text style={styles.infoText}>Don't have an account yet?</Text>
+            <Text style={styles.infoText}>Have an account?</Text>
             <TouchableOpacity
               onPress={() => {
-                navigate(REGISTER);
+                navigate(LOGIN);
               }}>
-              <Text style={styles.registerBtn}>Register</Text>
+              <Text style={styles.registerBtn}>Log In</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -47,4 +50,4 @@ const LoginComponent = () => {
   );
 };
 
-export default LoginComponent;
+export default RegisterComponent;
